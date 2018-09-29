@@ -72,4 +72,4 @@ npm run build
 
 
 ## test/functions 是云函数的测试参数
-详细命令行用法，见文档：https://github.com/TencentCloudBase/tcb-cli/blob/master/docs/functions.md
+详细命令行用法，见文档：https://github.com/hu-qi/tcb-cli/blob/master/docs/functions.md
