@@ -29,7 +29,7 @@ const jdists = require('gulp-jdists')
 // 将 client 目录下的文件，编译到小程序开发者工具实际运行的 dist 目录下
 const src = './client'
 const dist = './dist'
-// 通过 --type prod 区分生产发布打包和开发发布打包 
+// 通过 --type prod 区分生产发布打包和开发发布打包  默认为开发发布打包
 const isProd = argv.type === 'prod'
 
 // 处理报错
@@ -49,6 +49,7 @@ gulp.task('wxml', () => {
     .pipe(isProd ? htmlmin({ collapseWhitespace: true, removeComments: true, keepClosingSlash: true }) : through.obj())
     .pipe(gulp.dest(dist))
 })
+
 // 项目使用sass开发wxss，先将scss/sass文件编译成wxss，同时将px转成rpx，webfont转成base64引入.
 // 如果不使用css自动添加浏览器兼容前缀的autoprefixer插件 则可以在微信开发者工具中打开上传代码时样式自动补全
 gulp.task('wxss', () => {

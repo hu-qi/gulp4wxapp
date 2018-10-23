@@ -62,14 +62,14 @@ npm run build
 
 
 ## 云函数 mock
-小程序Serverless云的云函数功能很好用，解决了前端开发小程序后端服务的痛点，但是云函数每次修改都要上传部署到线上才能测试，的确是很费时费力，我这里使用了express 做了个 mock server，原理是：
+小程序Serverless云的云函数功能很好用，解决了前端开发小程序后端服务的痛点，但是云函数每次修改都要上传部署到线上才能测试，的确是很费时费力，这里使用了express 做了个 mock server，原理是：
 
 1. 将云函数代码拆分成单例
 2. 在`server/index.js`中，将云函数作为一个 express 的中间件函数使用
 3. 在本地开发中，小程序前端调用的云函数`wx.cloud.callFunction`的时候，替换成`api-mock.js`中的使用 `wx.request` 调用的本地 mock server 接口
-4. 使用 jdists 开发时候使用本地的 `api-mock`，生产打包则暴露真正的`api.js`（详见：`pages/index/index.js`）
+4. 使用 [jdists](https://github.com/zswang/jdists) 开发时候使用本地的 `api-mock`，生产打包则暴露真正的`api.js`（详见：`pages/index/index.js`）
 
 
 
-## test/functions 是云函数的测试参数
-详细命令行用法，见文档：https://github.com/hu-qi/tcb-cli/blob/master/docs/functions.md
+## Todo
+- test模块
